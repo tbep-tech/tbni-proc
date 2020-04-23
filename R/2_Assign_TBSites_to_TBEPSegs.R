@@ -10,9 +10,10 @@ library(tidyverse)
 library(sf)          # classes and functions for vector data
 library(spData)      # load geographic data
 library(tmap)        # for static and interactive maps
+library(here)
 
 # Specify input catch file from the script "1_Query_FIM_Database"
-catch <- "TampaBay_NektonIndexData_20200406.csv"
+catch <- here("data/TampaBay_NektonIndexData_20200406.csv")
 
 # Read in catch dataset and get list of FIM sites
 FIMsites <- read.csv(catch, header = TRUE, stringsAsFactors = FALSE) %>%
@@ -23,7 +24,7 @@ FIMsites <- read.csv(catch, header = TRUE, stringsAsFactors = FALSE) %>%
 
 #### Map FIM sites and assign to TBEP management zones ####
 # Read in the shape file of TBEP segments
-shape <- read_sf(dsn = ".", layer = "TBEP_Segments_WGS84") %>%
+shape <- st_read(here("data/TBEP_Segments_WGS84.shp")) %>%
   #clean up name of bay segment column
   mutate(TBEP_seg = case_when(.$BAY_SEGMEN == 1 ~ "OTB",
                               .$BAY_SEGMEN == 2 ~ "HB",
@@ -36,7 +37,7 @@ shape <- read_sf(dsn = ".", layer = "TBEP_Segments_WGS84") %>%
   select(-FID_1, -Count_, -BAY_SEGMEN)
 
 # Read in the shape file of Florida
-shape.FL <- read_sf(dsn = ".", layer = "Florida") %>%
+shape.FL <- st_read(here("data/Florida.shp")) %>%
   select(geometry)
 
 #Convert FIM site list into sf object
@@ -99,4 +100,4 @@ Catch_TBEPsegs <- read.csv(catch, header = TRUE, stringsAsFactors = FALSE) %>%
   select(-geometry)
 
 # write the TBEP Segment assignments to a .csv
-write.csv(Catch_TBEPsegs, paste0("TampaBay_NektonIndexTBEPSegAssign_", Sys.Date(), ".csv"), row.names = FALSE)
+write.csv(Catch_TBEPsegs, here("data", paste0("TampaBay_NektonIndexTBEPSegAssign_", Sys.Date(), ".csv")), row.names = FALSE)

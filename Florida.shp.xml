@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<metadata>
+	<idinfo>
+		<citation>
+			<citeinfo>
+				<origin>Florida Fish and Wildlife Conservation Commission (FWC), Fish and Wildlife Research Institute (FWRI), Center for Spatial Analysis</origin>
+				<pubdate>1990</pubdate>
+				<pubtime>Unknown</pubtime>
+				<title>camra_mrgis_fl_500k</title>
+				<geoform>vector digital data</geoform>
+				<pubinfo>
+					<pubplace>St. Petersburg, Florida</pubplace>
+					<publish>FWC, FWRI</publish>
+				</pubinfo>
+				<smcilnkh>false</smcilnkh>
+				<smcisrcc>publication date</smcisrcc>
+				<smcisrcm>digital</smcisrcm>
+				<smcisrcs>500000</smcisrcs>
+				<smcisrct>
+					<timeinfo>
+						<sngdate>
+							<time>Unknown</time>
+						</sngdate>
+					</timeinfo>
+				</smcisrct>
+				<onlink Sync="TRUE">\\Chaplin\FishBio\FIMP\GIS\shorelines\Florida.shp</onlink><ftname Sync="TRUE">Florida</ftname></citeinfo>
+		</citation>
+		<descript>
+			<abstract>This GIS data set represents a general Florida shoreline in a quick drawing, minimally detailed polygon and line format.</abstract>
+			<purpose>This data set visually represents a general Florida shoreline.</purpose>
+			<supplinf>
+Prior to July 1, 2004, the Fish and Wildlife Research Institute (FWRI) was known as the Florida Marine Research Institute (FMRI). The institute name has not been changed in historical data sets or references to work completed by the Florida Marine Research Institute. The institute name has been changed in references to ongoing research, new research, and contact information.
+
+The source and scale are unknown.  The estimated scale is approximately 1:500,000.
+</supplinf>
+			<langdata Sync="TRUE">en</langdata></descript>
+		<timeperd>
+			<timeinfo>
+				<sngdate>
+					<caldate>2000</caldate>
+					<time>Unknown</time>
+				</sngdate>
+			</timeinfo>
+			<current>publication date</current>
+		</timeperd>
+		<status>
+			<progress>Complete</progress>
+			<update>As needed</update>
+		</status>
+		<spdom>
+			<bounding>
+				<westbc>-87.430788</westbc>
+				<eastbc>-79.869373</eastbc>
+				<northbc>30.984364</northbc>
+				<southbc>24.515477</southbc>
+			</bounding>
+			<descgeog>State of Florida</descgeog>
+			<lboundng><leftbc Sync="TRUE">52544.964434</leftbc><rightbc Sync="TRUE">794261.029168</rightbc><bottombc Sync="TRUE">61944.410175</bottombc><topbc Sync="TRUE">781722.011787</topbc></lboundng></spdom>
+		<keywords>
+			<theme>
+				<themekt>FWRItheme</themekt>
+				<themekey>shoreline</themekey>
+				<themekey>GIS</themekey>
+				<themekey>mapping</themekey>
+				<themekey>coastal</themekey>
+			</theme>
+			<theme>
+				<themekt>ISO 19115 Topic Category</themekt>
+				<themekey>boundaries</themekey>
+			</theme>
+			<place>
+				<placekt>FWRIplace</placekt>
+				<placekey>Florida</placekey>
+				<placekey>statewide</placekey>
+				<placekey>west coast of Florida</placekey>
+				<placekey>east coast of Florida</placekey>
+				<placekey>northeast Florida</placekey>
+				<placekey>northwest Florida</placekey>
+				<placekey>Florida Keys</placekey>
+				<placekey>southwest Florida</placekey>
+				<placekey>south Florida</placekey>
+				<placekey>southeast Florida</placekey>
+				<placekey>north Florida</placekey>
+			</place>
+			<place>
+				<placekt>FWC Region</placekt>
+				<placekey>FWC Region-North Central</placekey>
+				<placekey>FWC Region-Northeast</placekey>
+				<placekey>FWC Region-Northwest</placekey>
+				<placekey>FWC Region-South</placekey>
+				<placekey>FWC Region-Southwest</placekey>
+			</place>
+			<place>
+				<placekt>Water Management Districts</placekt>
+				<placekey>Northwest Florida Water Management District</placekey>
+				<placekey>South Florida Water Management District</placekey>
+				<placekey>Southwest Florida Water Management District</placekey>
+				<placekey>St. Johns River Water Management District</placekey>
+				<placekey>Suwannee River Water Management District</placekey>
+			</place>
+		</keywords>
+		<accconst>All data must be verified by Principal Investigator or Group Database Analyst prior to release.  It is strongly recommended that this data is directly acquired from FWC and not indirectly through other sources which may have changed the data in some way. FWC makes no claims as to the data's suitability for other purposes.</accconst>
+		<useconst>Acknowledgement of the FWC-FWRI (Florida Fish and Wildlife Conservation Commission-Fish and Wildlife Research Institute) as the data source would be appreciated in any products developed from these data, and such acknowledgment as is standard for citation and legal practices for data source is expected by users of this data.  Please cite the original metadata when using portions of the record to create a similar record of slightly altered data, such as reprojection. If any data are modified or adjusted, please share the edited information with FWC. Users should be aware that comparison with other data sets for the same area from other time periods may be inaccurate due to inconsistencies resulting from changes in mapping conventions, data collection, and computer processes over time. FWC shall not be liable for improper or incorrect use of this data. These data are not legal documents and are not to be used as such.  This is not a survey data set and should not be utilized as such. These data are not to be used for navigation</useconst>
+		<ptcontac>
+			<cntinfo>
+				<cntperp>
+					<cntper>GISLibrarian</cntper>
+					<cntorg>FWC-FWRI (Florida Fish and Wildlife Conservation Commission-Fish and Wildlife Research Institute)</cntorg>
+				</cntperp>
+				<cntpos>GIS Data Librarian</cntpos>
+				<cntaddr>
+					<addrtype>mailing and physical address</addrtype>
+					<address>
+Fish and Wildlife Research Institute
+100 Eighth Avenue Southeast
+</address>
+					<city>St. Petersburg</city>
+					<state>Florida</state>
+					<postal>33701</postal>
+					<country>USA</country>
+				</cntaddr>
+				<cntvoice>727-896-8626</cntvoice>
+				<cntfax>727-893-1679</cntfax>
+				<cntemail>GISLibrarian@MyFWC.com</cntemail>
+				<hours>8:00 a.m.-5:00 p.m. Eastern time</hours>
+				<smcoemhy>false</smcoemhy>
+			</cntinfo>
+		</ptcontac>
+		<secinfo>
+			<secsys>FWRI-DC</secsys>
+			<secclass>Available with caution</secclass>
+			<sechandl>Available with caution</sechandl>
+		</secinfo>
+		<native>Windows NT Version 5.0 (Build 2195) Service Pack 1; ESRI ArcInfo 8.1.0.415</native>
+		<smbrowse>false</smbrowse>
+		<smtype>1</smtype>
+		<natvform Sync="TRUE">Shapefile</natvform></idinfo>
+	<dataqual>
+		<attracc>
+			<attraccr>unknown</attraccr>
+		</attracc>
+		<logic>unknown</logic>
+		<complete>unknown</complete>
+		<posacc>
+			<horizpa>
+				<horizpar>unknown</horizpar>
+			</horizpa>
+			<vertacc>
+				<vertaccr>unknown</vertaccr>
+			</vertacc>
+		</posacc>
+		<lineage>
+			<procstep>
+				<procdesc>unknown</procdesc>
+				<procdate>1990</procdate>
+				<proccont>
+					<cntinfo>
+						<cntperp>
+							<cntper>GISLibrarian</cntper>
+							<cntorg>FWC-FWRI (Florida Fish and Wildlife Conservation Commission-Fish and Wildlife Research Institute)</cntorg>
+						</cntperp>
+						<cntpos>GIS Data Librarian</cntpos>
+						<cntaddr>
+							<addrtype>mailing and physical address</addrtype>
+							<address>
+Fish and Wildlife Research Institute
+100 Eighth Avenue Southeast
+</address>
+							<city>St. Petersburg</city>
+							<state>Florida</state>
+							<postal>33701</postal>
+							<country>USA</country>
+						</cntaddr>
+						<cntvoice>727-896-8626</cntvoice>
+						<cntfax>727-893-1679</cntfax>
+						<cntemail>GISLibrarian@MyFWC.com</cntemail>
+						<hours>8:00 a.m.-5:00 p.m. Eastern time</hours>
+						<smcoemhy>false</smcoemhy>
+					</cntinfo>
+				</proccont>
+			</procstep>
+			<procstep><procdesc Sync="TRUE">Metadata imported.</procdesc><srcused Sync="TRUE">C:\DOCUME~1\CHRIS~1.DAU\LOCALS~1\Temp\xml16E.tmp</srcused><date Sync="TRUE">20060508</date><time Sync="TRUE">11203600</time></procstep><procstep><procdesc Sync="TRUE">Dataset copied.</procdesc><srcused Sync="TRUE">Server=gleason; Service=5153; User=FIM_MAPPER; Version=SDE.DEFAULT</srcused><date Sync="TRUE">20070618</date><time Sync="TRUE">12213200</time></procstep></lineage>
+	</dataqual>
+	<spdoinfo>
+		<direct>Vector</direct>
+		<ptvctinf>
+			<sdtsterm Name="Florida">
+				<sdtstype>G-polygon</sdtstype>
+				<ptvctcnt>81</ptvctcnt>
+				<smcaptur>false</smcaptur>
+			</sdtsterm>
+			<esriterm Name="Florida"><efeatyp Sync="TRUE">Simple</efeatyp><efeageom Sync="TRUE">Polygon</efeageom><esritopo Sync="TRUE">FALSE</esritopo><efeacnt Sync="TRUE">71</efeacnt><spindex Sync="TRUE">FALSE</spindex><linrefer Sync="TRUE">FALSE</linrefer></esriterm></ptvctinf>
+		<smcaptur>false</smcaptur>
+	</spdoinfo>
+	<spref>
+		<horizsys>
+			<planar>
+				<planci>
+					<plance>Coordinate Pair</plance>
+					<coordrep>
+						<absres>0.001513</absres>
+						<ordres>0.001513</ordres>
+					</coordrep>
+					<plandu>meters</plandu>
+				</planci>
+				<mapproj><mapprojn Sync="TRUE">Albers Conical Equal Area</mapprojn><albers><stdparll Sync="TRUE">24.000000</stdparll><stdparll Sync="TRUE">31.500000</stdparll><longcm Sync="TRUE">-84.000000</longcm><latprjo Sync="TRUE">24.000000</latprjo><feast Sync="TRUE">400000.000000</feast><fnorth Sync="TRUE">0.000000</fnorth></albers></mapproj></planar>
+			<geodetic>
+				<horizdn>North American Datum of 1983</horizdn>
+				<ellips>Geodetic Reference System 80</ellips>
+				<semiaxis>6378137</semiaxis>
+				<denflat>298.257</denflat>
+			</geodetic>
+			<cordsysn><geogcsn Sync="TRUE">GCS_North_American_1983</geogcsn><projcsn Sync="TRUE">PCS_Albers</projcsn></cordsysn></horizsys>
+	</spref>
+	<eainfo>
+		<detailed Name="Florida">
+			<enttyp>
+				<enttypl>FMRI.fl_500_polygon</enttypl>
+				<enttypd>There are no line attributes.  Polygons have the attribute "DATA," which states that the polygon represents "shoreline."</enttypd>
+				<enttypds>Producer defined</enttypds>
+				<enttypt Sync="TRUE">Feature Class</enttypt><enttypc Sync="TRUE">71</enttypc></enttyp>
+			<attr><attrlabl Sync="TRUE">FID</attrlabl><attalias Sync="TRUE">FID</attalias><attrtype Sync="TRUE">OID</attrtype><attwidth Sync="TRUE">4</attwidth><atprecis Sync="TRUE">0</atprecis><attscale Sync="TRUE">0</attscale><attrdef Sync="TRUE">Internal feature number.</attrdef><attrdefs Sync="TRUE">ESRI</attrdefs><attrdomv><udom Sync="TRUE">Sequential unique whole numbers that are automatically generated.</udom></attrdomv></attr><attr>
+				<attrlabl>DATA</attrlabl>
+				<attrdef>This attribute states that the polygon represents "shoreline."</attrdef>
+				<attrdefs>Producer defined</attrdefs>
+				<attrdomv>
+					<udom>This attribute states that the polygon represents "shoreline."</udom>
+				</attrdomv>
+				<smcaptur>false</smcaptur>
+				<attalias Sync="TRUE">DATA</attalias><attrtype Sync="TRUE">String</attrtype><attwidth Sync="TRUE">10</attwidth></attr>
+			<attr>
+				<attrlabl>OBJECTID</attrlabl>
+				<attrdef>Internal ID used by SDE</attrdef>
+				<attrdefs>Producer defined</attrdefs>
+				<attrdomv>
+					<udom>Numeric ID for each poly</udom>
+				</attrdomv>
+				<smcaptur>false</smcaptur>
+				<attalias Sync="TRUE">OBJECTID</attalias><attrtype Sync="TRUE">Number</attrtype><attwidth Sync="TRUE">10</attwidth></attr>
+			<attr>
+				<attrlabl>SHAPE</attrlabl>
+				<attrdef>Feature geometry</attrdef>
+				<attrdefs>Producer defined</attrdefs>
+				<attrdomv>
+					<udom>Feature geometry</udom>
+				</attrdomv>
+				<smcaptur>false</smcaptur>
+				<attalias Sync="TRUE">Shape</attalias><attrtype Sync="TRUE">Geometry</attrtype><attwidth Sync="TRUE">0</attwidth><atprecis Sync="TRUE">0</atprecis><attscale Sync="TRUE">0</attscale></attr>
+			<attr><attrlabl Sync="TRUE">SHAPE_AREA</attrlabl><attalias Sync="TRUE">SHAPE_AREA</attalias><attrtype Sync="TRUE">Float</attrtype><attwidth Sync="TRUE">19</attwidth><attrdef Sync="TRUE">Area of feature in internal units squared.</attrdef><attrdefs Sync="TRUE">ESRI</attrdefs><attrdomv><udom Sync="TRUE">Positive real numbers that are automatically generated.</udom></attrdomv><atnumdec Sync="TRUE">11</atnumdec></attr><attr><attrlabl Sync="TRUE">SHAPE_LEN</attrlabl><attalias Sync="TRUE">SHAPE_LEN</attalias><attrtype Sync="TRUE">Float</attrtype><attwidth Sync="TRUE">19</attwidth><atnumdec Sync="TRUE">11</atnumdec></attr></detailed>
+	</eainfo>
+	<distinfo>
+		<distrib>
+			<cntinfo>
+				<cntperp>
+					<cntper>GISLibrarian</cntper>
+					<cntorg>FWC-FWRI (Florida Fish and Wildlife Conservation Commission-Fish and Wildlife Research Institute)</cntorg>
+				</cntperp>
+				<cntpos>GIS Data Librarian</cntpos>
+				<cntaddr>
+					<addrtype>mailing and physical address</addrtype>
+					<address>
+Fish and Wildlife Research Institute
+100 Eighth Avenue Southeast
+</address>
+					<city>St. Petersburg</city>
+					<state>Florida</state>
+					<postal>33701</postal>
+					<country>USA</country>
+				</cntaddr>
+				<cntvoice>727-896-8626</cntvoice>
+				<cntfax>727-893-1679</cntfax>
+				<cntemail>GISLibrarian@MyFWC.com</cntemail>
+				<hours>8:00 a.m.-5:00 p.m. Eastern time</hours>
+				<smcoemhy>false</smcoemhy>
+			</cntinfo>
+		</distrib>
+		<resdesc>FMRI.fl_500_polygon</resdesc>
+		<distliab>This data set is in the public domain, and the recipient may not assert any proprietary rights thereto nor represent it to anyone as other than a FWC-FWRI produced data set or the appropriate originator; it is provided "as-is" without warranty of any kind, including, but not limited to, the implied warranties of merchantability and fitness for a particular purpose. The user assumes all responsibility for the accuracy and suitability of this data set for a specific application. In no event will the staff of the Fish and Wildlife Research Institute be liable for any damages, including lost profits, lost savings, or other incidental or consequential damages arising from the use of or the inability to use this data set.</distliab>
+		<stdorder>
+			<digform>
+				<digtinfo>
+					<formname>SHP</formname>
+					<asciistr>
+						<casesens>false</casesens>
+					</asciistr>
+					<transize Sync="TRUE">0.037</transize><dssize Sync="TRUE">0.037</dssize></digtinfo>
+				<digtopt>
+					<onlinopt>
+						<computer>
+							<networka>
+								<networkr>http://ocean.floridamarine.org/mrgis</networkr>
+								<smhyperl>0</smhyperl>
+							</networka>
+						</computer>
+					</onlinopt>
+					<smdistty>1</smdistty>
+				</digtopt>
+			</digform>
+			<fees>None. However, persons or organizations requesting information must provide transfer media if FTP is not available and must pay express shipping costs if express shipping is required.</fees>
+			<ordering>Contact GIS Librarian by e-mail, telephone, or letter explaining which products are needed and providing a brief description of how the products will be used. Also, provide name and address of the person or organization requesting the products.</ordering>
+			<turnarnd>Usually within 10 business days, although, complex requests may take longer</turnarnd>
+			<smdistty>1</smdistty>
+		</stdorder>
+		<custom>These data have caveats. Contact GIS Librarian for details. If these data are maintained by an agency other than FWC-FWRI, then the source agency should be contacted directly for requests.</custom>
+		<smdistnm>Available with caution</smdistnm>
+	</distinfo>
+	<metainfo>
+		<metd>20010521</metd>
+		<metrd>20060503</metrd>
+		<metfrd></metfrd>
+		<metc>
+			<cntinfo>
+				<cntperp>
+					<cntper>GISLibrarian</cntper>
+					<cntorg>FWC-FWRI (Florida Fish and Wildlife Conservation Commission-Fish and Wildlife Research Institute)</cntorg>
+				</cntperp>
+				<cntpos>GIS Data Librarian</cntpos>
+				<cntaddr>
+					<addrtype>mailing and physical address</addrtype>
+					<address>
+Fish and Wildlife Research Institute
+100 Eighth Avenue Southeast
+</address>
+					<city>St. Petersburg</city>
+					<state>Florida</state>
+					<postal>33701</postal>
+					<country>USA</country>
+				</cntaddr>
+				<cntvoice>727-896-8626</cntvoice>
+				<cntfax>727-893-1679</cntfax>
+				<cntemail>GISLibrarian@MyFWC.com</cntemail>
+				<hours>8:00 a.m.-5:00 p.m. Eastern time</hours>
+				<smcoemhy>false</smcoemhy>
+				<cntorgp><cntper>REQUIRED: The person responsible for the metadata information.</cntper><cntorg>REQUIRED: The organization responsible for the metadata information.</cntorg></cntorgp></cntinfo>
+		</metc>
+		<metstdn>FGDC Content Standards for Digital Geospatial Metadata</metstdn>
+		<metstdv>FGDC-STD-001-1998</metstdv>
+		<mettc>local time</mettc>
+		<metac>No restrictions on metadata.</metac>
+		<metuc>Metadata must be distributed with the data set.</metuc>
+		<metsi>
+			<metscs>FWRI-MC</metscs>
+			<metsc>Available</metsc>
+			<metshd>Metadata must be distributed with the data set.</metshd>
+		</metsi>
+		<metextns>
+			<onlink>http://www.esri.com/metadata/esriprof80.html</onlink>
+			<metprof>ESRI Metadata Profile</metprof>
+			<smmrexth>0</smmrexth>
+		</metextns>
+		<langmeta Sync="TRUE">en</langmeta><metextns><onlink Sync="TRUE">http://www.esri.com/metadata/esriprof80.html</onlink><metprof Sync="TRUE">ESRI Metadata Profile</metprof></metextns></metainfo>
+	<Esri><CreaDate>20070618</CreaDate><CreaTime>12213100</CreaTime><SyncOnce>FALSE</SyncOnce><MetaID>{F35346FB-A21F-47DA-8E92-E223B9F9ADEA}</MetaID><SyncDate>20111018</SyncDate><SyncTime>12303100</SyncTime><ModDate>20111018</ModDate><ModTime>12303100</ModTime></Esri><distInfo><distributor><distorTran><onLineSrc><linkage Sync="TRUE">file://\\Chaplin\FishBio\FIMP\GIS\shorelines\Florida.shp</linkage><protocol Sync="TRUE">Local Area Network</protocol><orDesc Sync="TRUE">002</orDesc></onLineSrc><transSize Sync="TRUE">0.037</transSize></distorTran><distorFormat><formatName Sync="TRUE">Shapefile</formatName></distorFormat></distributor></distInfo><dataIdInfo><envirDesc Sync="TRUE">Microsoft Windows XP Version 5.1 (Build 2600) Service Pack 3; ESRI ArcCatalog 9.3.1.3000</envirDesc><dataLang><languageCode Sync="TRUE" value="en"></languageCode></dataLang><idCitation><resTitle Sync="TRUE">Florida</resTitle><presForm><PresFormCd Sync="TRUE" value="005"></PresFormCd></presForm></idCitation><spatRpType><SpatRepTypCd Sync="TRUE" value="001"></SpatRepTypCd></spatRpType><dataExt><geoEle><GeoBndBox esriExtentType="native"><westBL Sync="TRUE">52544.964434</westBL><eastBL Sync="TRUE">794261.029168</eastBL><northBL Sync="TRUE">781722.011787</northBL><southBL Sync="TRUE">61944.410175</southBL><exTypeCode Sync="TRUE">1</exTypeCode></GeoBndBox></geoEle></dataExt><geoBox esriExtentType="decdegrees"><westBL Sync="TRUE">-87.64055</westBL><eastBL Sync="TRUE">-79.869373</eastBL><northBL Sync="TRUE">31.043896</northBL><southBL Sync="TRUE">24.502938</southBL><exTypeCode Sync="TRUE">1</exTypeCode></geoBox></dataIdInfo><mdLang><languageCode Sync="TRUE" value="en"></languageCode></mdLang><mdStanName Sync="TRUE">ISO 19115 Geographic Information - Metadata</mdStanName><mdStanVer Sync="TRUE">DIS_ESRI1.0</mdStanVer><mdChar><CharSetCd Sync="TRUE" value="004"></CharSetCd></mdChar><mdHrLv><ScopeCd Sync="TRUE" value="005"></ScopeCd></mdHrLv><mdHrLvName Sync="TRUE">dataset</mdHrLvName><refSysInfo><RefSystem><refSysID><identCode Sync="TRUE">PCS_Albers</identCode></refSysID></RefSystem></refSysInfo><spatRepInfo><VectSpatRep><topLvl><TopoLevCd Sync="TRUE" value="001"></TopoLevCd></topLvl><geometObjs Name="Florida"><geoObjTyp><GeoObjTypCd Sync="TRUE" value="001"></GeoObjTypCd></geoObjTyp><geoObjCnt Sync="TRUE">71</geoObjCnt></geometObjs></VectSpatRep></spatRepInfo><mdDateSt Sync="TRUE">20111018</mdDateSt></metadata>

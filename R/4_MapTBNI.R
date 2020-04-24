@@ -19,24 +19,24 @@ yr = 2018
 
 # Read in score data and prep for mapping
 scores1 <- read.csv(input, header = TRUE, stringsAsFactors = FALSE) %>%
-  select(Reference, Year, TBEP_seg, Longitude, Latitude, TBNI_Score) %>%
+  select(Reference, Year, bay_segment, Longitude, Latitude, TBNI_Score) %>%
   filter(Year == yr) %>%
   arrange(Reference)
 
 AveBayScores <- scores1 %>%
-  group_by(Year, TBEP_seg) %>%
+  group_by(Year, bay_segment) %>%
   summarize(SegScore = round(mean(TBNI_Score))) %>%
   mutate(MapCol = case_when(SegScore <= 32 ~ "#FF0000",
                             SegScore >= 46 ~ "#008000",
                             TRUE ~ "#FFFF00"))
 
 scores <- scores1 %>%
-  left_join(AveBayScores, by = c("Year", "TBEP_seg"))
+  left_join(AveBayScores, by = c("Year", "bay_segment"))
 
 # Read in the shape file of TBEP segments
 shape_TB <- read_sf(dsn = ".", layer = "TBEP_Segments_WGS84") %>%
   #clean up name of bay segment column
-  mutate(TBEP_seg = case_when(.$BAY_SEGMEN == 1 ~ "OTB",
+  mutate(bay_segment = case_when(.$BAY_SEGMEN == 1 ~ "OTB",
                               .$BAY_SEGMEN == 2 ~ "HB",
                               .$BAY_SEGMEN == 3 ~ "MTB",
                               .$BAY_SEGMEN == 4 ~ "LTB",
@@ -46,7 +46,7 @@ shape_TB <- read_sf(dsn = ".", layer = "TBEP_Segments_WGS84") %>%
   #remove extra columns
   select(-FID_1, -Count_, -BAY_SEGMEN) %>%
   #filter for just the main bay segments
-  filter(TBEP_seg %in% c("OTB", "HB", "MTB", "LTB")) %>%
+  filter(bay_segment %in% c("OTB", "HB", "MTB", "LTB")) %>%
   left_join(AveBayScores) %>%
   st_make_valid()
 

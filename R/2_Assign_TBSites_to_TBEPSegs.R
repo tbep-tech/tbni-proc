@@ -26,7 +26,7 @@ FIMsites <- read.csv(catch, header = TRUE, stringsAsFactors = FALSE) %>%
 # Read in the shape file of TBEP segments
 shape <- st_read(here("data/TBEP_Segments_WGS84.shp")) %>%
   #clean up name of bay segment column
-  mutate(TBEP_seg = case_when(.$BAY_SEGMEN == 1 ~ "OTB",
+  mutate(bay_segment = case_when(.$BAY_SEGMEN == 1 ~ "OTB",
                               .$BAY_SEGMEN == 2 ~ "HB",
                               .$BAY_SEGMEN == 3 ~ "MTB",
                               .$BAY_SEGMEN == 4 ~ "LTB",
@@ -59,35 +59,37 @@ plot(Sites_sf)
 # Look at how the assignments line up with the bay segments
 # visualizing the map takes a little while because the Florida land shapefile takes a while to draw
 map <- tm_shape(shape) +
-  tm_polygons("TBEP_seg", pallette = "div", id = "TBEP_seg") +
+  tm_polygons("bay_segment", pallette = "div", id = "bay_segment") +
   #add in the sites, colored by what segment they've been assigned to
   tm_shape(site_in_seg) +
-  tm_symbols(size = 0.5, col = "TBEP_seg", alpha = 1) +
+  tm_symbols(size = 0.5, col = "bay_segment", alpha = 1) +
   #add in land on top so that we can really see the bay
   tm_shape(shape.FL) +
   tm_fill("gray")
 map
 
 #Clean up some of the assignments; remove ones outside four main bay segments
-TBEPSeg_assign <- site_in_seg %>%
+fimstations <- site_in_seg %>%
   #fix some of the assignments due to land changes
   #make sure grid 363 falls into LTB, and 203 & 220 into MTB, along with grid 204 with Latitude < 27.7937
-  mutate(TBEP_seg = case_when(Grid == 363 ~ "LTB",
+  mutate(bay_segment = case_when(Grid == 363 ~ "LTB",
                               Grid %in% c(203, 220) ~ "MTB",
                               (Grid == 204 & unlist(map(.$geometry,1)) < 27.7937) ~ "MTB",
-                              TRUE ~ TBEP_seg)) %>%
+                              TRUE ~ bay_segment)) %>%
   #remove sites from outside boundary of bay proper (ones not to be included in the nekton index)
-  filter(!TBEP_seg %in% c("Boca Ceiga", "Terra Ceia", "Manatee River")
-         & !is.na(TBEP_seg))
+  filter(!bay_segment %in% c("Boca Ceiga", "Terra Ceia", "Manatee River")
+         & !is.na(bay_segment))
+
+# save(fimstations, file = '../tbeptools/data/fimstations.RData', compress = 'xz')
 
 #Preview all sites on map
 map2 <- tm_shape(shape) +
-  tm_polygons("TBEP_seg", pallette = "div", id = "TBEP_seg") +
+  tm_polygons("bay_segment", pallette = "div", id = "bay_segment") +
   tm_layout(main.title = "Tampa Bay Small Seine Samples Assigned to\nTBEP Segments (bay proper only",
             main.title.position = "center") +
   #add in the sites, colored by what segment they've been assigned to
-  tm_shape(TBEPSeg_assign) +
-  tm_symbols(size = 0.5, col = "TBEP_seg", alpha = 1) +
+  tm_shape(fimstations) +
+  tm_symbols(size = 0.5, col = "bay_segment", alpha = 1) +
   #add in land on top so that we can really see the bay
   tm_shape(shape.FL) +
   tm_fill("gray")
@@ -96,8 +98,8 @@ show(map2)
 
 #### Merge the TBEP Segment Assignment with the Catch Data ####
 Catch_TBEPsegs <- read.csv(catch, header = TRUE, stringsAsFactors = FALSE) %>%
-  right_join(TBEPSeg_assign, by = c("Reference", "Zone", "Grid")) %>%
+  right_join(fimstations, by = c("Reference", "Zone", "Grid")) %>%
   select(-geometry)
 
 # write the TBEP Segment assignments to a .csv
-write.csv(Catch_TBEPsegs, here("data", paste0("TampaBay_NektonIndexTBEPSegAssign_", Sys.Date(), ".csv")), row.names = FALSE)
+write.csv(Catch_TBEPsegs, here("data/TampaBay_NektonIndexTBEPSegAssign.csv"), row.names = FALSE)

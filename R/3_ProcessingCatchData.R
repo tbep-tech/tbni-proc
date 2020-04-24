@@ -13,12 +13,13 @@
 #### Set Up ####
 library(tidyverse)
 library(lubridate)
+library(here)
 
 # Specify catch file with TBEP segment assignments from script "2_Assign_TBSites_to_TBEPSegs"
-CatchWithSegs <- "TampaBay_NektonIndexTBEPSegAssign_2020-04-19.csv"
+CatchWithSegs <- here("data/TampaBay_NektonIndexTBEPSegAssign.csv")
 
 # Specify the species guild classification file
-class <- "TBIndex_spp_codes.csv"
+class <- here("data/TBIndex_spp_codes.csv")
 
 #### 1. Prep Catch Data ####
 input_data <- read.csv(CatchWithSegs, header = TRUE, stringsAsFactors = FALSE) %>%
@@ -198,7 +199,7 @@ Metrics <- Counts %>%
                             Month %in% c(4, 5) ~ "Spring",
                             Month %in% c(6, 7, 8, 9) ~ "Summer",
                             Month %in% c(10, 11) ~ "Fall")) %>%
-  select(Reference, Year, Month, Season, TBEP_seg, Longitude, Latitude) %>%
+  select(Reference, Year, Month, Season, bay_segment, Longitude, Latitude) %>%
   #only keep one record of each reference
   distinct() %>%
   left_join(NumTaxa, by = "Reference") %>%
@@ -283,8 +284,8 @@ Metrics <- Counts %>%
 
 RefCond <- Metrics %>%
   filter(between(Year, 1998, 2015)) %>%
-  select(Season, TBEP_seg, NumTaxa, BenthicTaxa, TaxaSelect, NumGuilds, Shannon) %>%
-  group_by(TBEP_seg, Season) %>%
+  select(Season, bay_segment, NumTaxa, BenthicTaxa, TaxaSelect, NumGuilds, Shannon) %>%
+  group_by(bay_segment, Season) %>%
   summarize(NumTaxa_P5 = round(quantile(NumTaxa, probs = 0.05)),
             NumTaxa_P95 = round(quantile(NumTaxa, probs = 0.95)),
             BenthicTaxa_P5 = round(quantile(BenthicTaxa, probs = 0.05)),
@@ -299,8 +300,8 @@ RefCond <- Metrics %>%
 
 #### 4. Calculate Metric Scores ####
 Metric.Scores <- Metrics %>%
-  select(Reference, Year, Month, Season, TBEP_seg, Longitude, Latitude, NumTaxa, BenthicTaxa, TaxaSelect, NumGuilds, Shannon) %>%
-  left_join(RefCond, by = c("TBEP_seg", "Season")) %>%
+  select(Reference, Year, Month, Season, bay_segment, Longitude, Latitude, NumTaxa, BenthicTaxa, TaxaSelect, NumGuilds, Shannon) %>%
+  left_join(RefCond, by = c("bay_segment", "Season")) %>%
   #calculate metric scores (rounded to nearest whole number)
   mutate(ScoreNumTaxa = case_when(NumTaxa == 0 ~ 0,
                                   NumTaxa > NumTaxa_P95 ~ 10,
@@ -345,7 +346,7 @@ TBNI_Yrly_Scores <- TBNI.Scores %>%
             Upper.SEM = Yr_TBNI + SEM)
 
 TBNI_Seg_Scores <- TBNI.Scores %>%
-  group_by(TBEP_seg, Year) %>%
+  group_by(bay_segment, Year) %>%
   summarize(Segment_TBNI = round(mean(TBNI_Score),0))
 
 #### 6. Graph the TBNI ####
@@ -390,7 +391,7 @@ Seg_plot <- ggplot(TBNI_Seg_Scores) +
   geom_ribbon(aes(x = Year, ymin = 22, ymax= RedColor), fill = "red", alpha = 3/10) +
   geom_ribbon(aes(x = Year, ymin = RedColor, ymax = YellowColor), fill = "yellow", alpha = 3/10) +
   geom_ribbon(aes(x = Year, ymax = 58, ymin = YellowColor), fill = "green", alpha = 3/10) +
-  geom_line(aes(x = Year, y = Segment_TBNI, linetype = TBEP_seg, color = TBEP_seg), size = 1.25) +
+  geom_line(aes(x = Year, y = Segment_TBNI, linetype = bay_segment, color = bay_segment), size = 1.25) +
   scale_linetype_manual(name = "",
                         breaks = c("OTB", "HB", "MTB", "LTB"),
                         labels = c("OTB", "HB", "MTB", "LTB"),

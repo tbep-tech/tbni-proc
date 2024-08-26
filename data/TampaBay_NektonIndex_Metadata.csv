@@ -1,0 +1,21 @@
+Data.Field_name,Data_type,Field_length,Units.of.Measure,Precision,Description,Date_added,Date_discontinued
+Grid,SmallInt,NA,NA,0,Grid number within 'bay' where the sample was taken (FIM - based upon 1nm x 1nm ).,NA,NA
+Latitude,Decimal,NA,Decimal degrees,6,Latitude where the sample was taken,NA,NA
+Longitude,Decimal,NA,Decimal degrees,6,Longitude where the sample was taken,NA,NA
+Project_1,Char,2,Code list,NA,Primary project for which this sample was collected.  Must match up with Station_1.,2000-01-01,NA
+Project_2,Char,2,Code list,NA,Secondary project for which this sample was collected.  Must match up with Station_2.,2000-01-01,NA
+Project_3,Char,2,Code list,NA,Tertiary project for which this sample was collected.  Must match up with Station_3.,2000-01-01,NA
+Reference,Char,13,Contrived Key,NA,"A unique character code that identifies each sample; created by the concatenation of Bay+SamplingType+Year+Month+Trip+Sequence Number (eg.  ""TB"" + ""M"" + ""2007"" + ""01"" + ""01"" + ""01"" for first trip in Tampa Bay  in Jan 2007) - two character year in data entry app",NA,NA
+Sampling_Date,DateTime,NA,Date/Time,NA,Date that the sample was collected,NA,NA
+Stratum,Char,1,Code list,NA,The habitat stratum sampled during stratified-random sampling.,1996-02-01,NA
+Zone,VarChar,2,Code list,NA,Zone (group of related grids) where the sample was taken. Descriptions and boundaries for each zone can be found in FIM annual reports,NA,NA
+Cells,TinyInt,NA,Count,0,"Number of cells counted when a sample was subsampled (typically 1, but could be more when a six-way splitter was used in 1989/1990)",NA,NA
+NODCCODE,VarChar,12,Code list,NA,Unique numeric identifier for every species that FIM might encounter.,NA,NA
+Species_record_id,SmallInt,NA,Count,0,"A running number that sequentially increases within each “Reference” to uniquely identify each biology record within a “Reference”. Sequencing starts over at one (1) with each new ""Reference""",NA,NA
+Splitlevel,VarChar,2,Count,NA,"Number of times that the sample was split, if the sample was subsampled.",NA,NA
+Splittype,Char,1,Code list,NA,Type of splitter used if sample was subsampled (typically null (no split)or 2 (splitter with two cells); a six-way splitter was used briefly in 1989/1990),NA,NA
+NODCCODE,VarChar,12,NA,NA,"Unique numeric identifier for every species that FIM might encounter; older code system that is being phased out in favor of TSN, but has been retained by FIM because it is taxonomically ""smart"".",NA,NA
+Scientificname,Char,50,NA,NA,Scientific name (Genus and species) for each species.,NA,NA
+Commonname,Character,NA,NA,NA,Common name for each species,NA,NA
+effort,Decimal,NA,per 100 m2,NA,effort expressed per 100 m2,NA,NA
+Number,Integer,NA,individuals,NA,Number of individuals collected,NA,NA

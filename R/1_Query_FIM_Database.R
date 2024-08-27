@@ -75,7 +75,7 @@ FIM_metadata <- read.xlsx("//fwc-spfs1/FIMaster/Data/Metadata/Inshore/metadata_s
   add_row(Data.Field_name = "Number", Data_type = "Integer", Units.of.Measure = "individuals",
           Description = "Number of individuals collected")
 #write to .csv
-write_csv(FIM_metadata, paste("TBNI_GitHub/tbni-proc/data/TampaBay_NektonIndex_Metadata.csv"))
+write_csv(FIM_metadata, here::here("data/TampaBay_NektonIndex_Metadata.csv"))
 
 
 

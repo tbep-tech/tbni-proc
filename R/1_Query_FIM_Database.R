@@ -559,16 +559,83 @@ AnnRep_getPhysBio_data <-
         )
       )
     
+    #### Add catch data necessary for existing tbeptools workflow ####
+    Catch <- 
+      tbl(
+        conn,
+        in_schema("hsdb", "tbl_corp_biology_number")
+      ) %>%
+      select(
+        Reference, 
+        Species_record_id, 
+        Splittype, 
+        Splitlevel, 
+        Cells,
+        NODCCODE, 
+        Number, 
+        FHC
+      ) %>%
+      filter(
+        FHC != "D"
+      ) %>%
+      collect() %>%
+      select(
+        -FHC
+      ) %>%
+      left_join(
+        Phys, 
+        by = "Reference"
+      ) %>%
+      filter(
+        Bay == "TB",
+        Type == "M",
+        Year >= 1998,
+        (Project_1 == "AM" | Project_2 == "AM" | Project_3 == "AM"),
+        Gear %in% c("019", "020")
+      ) %>%
+      mutate(
+        effort = 140/100
+      ) %>%
+      inner_join(
+        select(
+          Spp,
+          NODCCODE,
+          Scientificname,
+          Commonname
+        ),
+        by = "NODCCODE"
+      ) %>%
+      select(
+        Reference, 
+        Project_1, 
+        Project_2, 
+        Project_3, 
+        Sampling_Date, 
+        Latitude, 
+        Longitude, 
+        Zone, 
+        Grid, 
+        Stratum, 
+        effort,
+        Species_record_id, 
+        NODCCODE, 
+        Scientificname, 
+        Commonname, 
+        Splittype, 
+        Splitlevel, 
+        Cells, 
+        Number
+      ) %>%
+      arrange(
+        Reference, 
+        Species_record_id
+      )
+    
     # Disconnect from SQL database
     dbDisconnect(conn)
     rm("conn")  
     
-    conn <- Connect_FIMSQL("FSAv1")
-    
-    dbDisconnect(conn)
-    rm("conn")  
-    
-    PhysBioList <- list(Phys, Bio, Len, Habitat, Hydro, RefCodes, Species_List)
+    PhysBioList <- list(Phys, Bio, Len, Habitat, Hydro, RefCodes, Species_List, Catch)
     
     return(PhysBioList)
   }
@@ -592,6 +659,7 @@ FIM_Habitat        <- dat[[4]]
 FIM_HydroLab       <- dat[[5]]
 FIM_ReferenceCodes <- dat[[6]]
 FIM_SpeciesCodes   <- dat[[7]]
+Catch              <- dat[[8]]
 
 #### Export FIM data ####
 saveRDS(
@@ -628,3 +696,10 @@ saveRDS(
   FIM_SpeciesCodes,
   file = here("data/FIM_TB_SpeciesCodes.rds")
 )
+
+write.csv(
+  Catch, 
+  file = here("data/TampaBay_NektonIndexData.csv"), 
+  row.names = FALSE
+)
+
